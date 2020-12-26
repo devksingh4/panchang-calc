@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-# panchanga.py -- routines for computing tithi, vara, etc.
+# panchang.py -- routines for computing tithi, vara, etc.
 #
 # Copyright (C) 2013 Satish BD  <bdsatish@gmail.com>
 # Downloaded from https://github.com/bdsatish/drik-panchanga
@@ -85,10 +85,10 @@ def unwrap_angles(angles):
   return result
 
 # Make angle lie between [-180, 180) instead of [0, 360)
-norm180 = lambda angle: (angle - 360) if angle >= 180 else angle;
+norm180 = lambda angle: (angle - 360) if angle >= 180 else angle
 
 # Make angle lie between [0, 360)
-norm360 = lambda angle: angle % 360
+norm360 = lambda angle: angle[0] % 360
 
 # Ketu is always 180° after Rahu, so same coordinates but different constellations
 # i.e if Rahu is in Pisces, Ketu is in Virgo etc
@@ -690,4 +690,4 @@ if __name__ == "__main__":
   masa_tests()
   ascendant_tests()
   navamsa_tests()
-  # new_moon(jd)
+  new_moon(date1)
